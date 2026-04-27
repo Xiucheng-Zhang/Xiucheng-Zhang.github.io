@@ -1333,16 +1333,28 @@ document.querySelectorAll('.nav-pill, .pi-dot').forEach(p => {
 });
 
 let touchStartY = 0;
+let touchStartTime = 0;
 let touchTarget = null;
-const TOUCH_THRESHOLD = 90;   // px — must swipe at least this far to flip pages
+const TOUCH_THRESHOLD = 150;       // px — minimum swipe distance to flip pages
+const TOUCH_FAST_THRESHOLD = 80;   // px — distance is enough if swipe is fast
+const TOUCH_FAST_DURATION = 300;   // ms — "fast" means under this duration
 window.addEventListener('touchstart', (e) => {
   touchStartY = e.touches[0].clientY;
+  touchStartTime = Date.now();
   touchTarget = e.target;
 }, { passive: true });
 window.addEventListener('touchend', (e) => {
   if (scrolling) return;
   const diff = touchStartY - e.changedTouches[0].clientY;
-  if (Math.abs(diff) < TOUCH_THRESHOLD) return;
+  const dur  = Date.now() - touchStartTime;
+  const absDiff = Math.abs(diff);
+  // Treat swipe as intentional only if either the distance is large,
+  // or the swipe is fast (a flick) with at least a moderate distance.
+  // This rejects slow drags and brief touches with small movement.
+  const isFlick = dur < TOUCH_FAST_DURATION && absDiff >= TOUCH_FAST_THRESHOLD;
+  const isLongSwipe = absDiff >= TOUCH_THRESHOLD;
+  if (!isFlick && !isLongSwipe) return;
+
   // ignore swipes that happened inside the news scroll area
   if (touchTarget && touchTarget.closest && touchTarget.closest('.news-list')) return;
 
