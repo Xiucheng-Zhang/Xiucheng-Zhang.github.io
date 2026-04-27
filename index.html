@@ -1333,10 +1333,29 @@ document.querySelectorAll('.nav-pill, .pi-dot').forEach(p => {
 });
 
 let touchStartY = 0;
-window.addEventListener('touchstart', (e) => { touchStartY = e.touches[0].clientY; }, { passive: true });
+let touchTarget = null;
+const TOUCH_THRESHOLD = 90;   // px — must swipe at least this far to flip pages
+window.addEventListener('touchstart', (e) => {
+  touchStartY = e.touches[0].clientY;
+  touchTarget = e.target;
+}, { passive: true });
 window.addEventListener('touchend', (e) => {
+  if (scrolling) return;
   const diff = touchStartY - e.changedTouches[0].clientY;
-  if (Math.abs(diff) < 50) return;
+  if (Math.abs(diff) < TOUCH_THRESHOLD) return;
+  // ignore swipes that happened inside the news scroll area
+  if (touchTarget && touchTarget.closest && touchTarget.closest('.news-list')) return;
+
+  // If the swipe started inside page 2's inner scroller, only flip pages
+  // when that scroller is already at the relevant boundary.
+  const scroller = touchTarget && touchTarget.closest && touchTarget.closest('#page-1 .page-content');
+  if (scroller) {
+    const atTop    = scroller.scrollTop <= 0;
+    const atBottom = scroller.scrollTop + scroller.clientHeight >= scroller.scrollHeight - 1;
+    if (diff > 0 && !atBottom) return;  // swipe up, content still has more below
+    if (diff < 0 && !atTop)    return;  // swipe down, content can still scroll up
+  }
+
   if (diff > 0) goTo(currentPage + 1);
   else goTo(currentPage - 1);
 }, { passive: true });
