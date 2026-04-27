@@ -1280,25 +1280,41 @@ function goTo(idx) {
 }
 
 let wheelLock = false;
+let boundaryIntent = 0;   // accumulated wheel delta while pressing against a scroll boundary
+let lastWheelTs = 0;
+const WHEEL_THRESHOLD = 40;       // ignore noisy small wheel events (trackpad inertia)
+const BOUNDARY_INTENT_NEEDED = 160; // must "push" this much past the boundary to flip pages
+const PAGE_FLIP_COOLDOWN = 1800;  // lock further flips for this long after a flip
+
 window.addEventListener('wheel', (e) => {
   if (wheelLock || scrolling) return;
-  if (Math.abs(e.deltaY) < 8) return;
+  if (Math.abs(e.deltaY) < WHEEL_THRESHOLD) return;
   // ignore wheel inside news scroll area
   if (e.target.closest('.news-list')) return;
 
+  const now = Date.now();
+  // reset boundary accumulator if user paused scrolling (>200ms gap)
+  if (now - lastWheelTs > 200) boundaryIntent = 0;
+  lastWheelTs = now;
+
   // If we're inside a page that has its own scrollable container
   // (e.g. page 2's project grid), let it scroll until it hits the boundary,
-  // and only then flip to the next/prev page.
+  // and only then accumulate intent before flipping pages.
   const scroller = e.target.closest('#page-1 .page-content');
   if (scroller) {
     const atTop    = scroller.scrollTop <= 0;
     const atBottom = scroller.scrollTop + scroller.clientHeight >= scroller.scrollHeight - 1;
-    if (e.deltaY > 0 && !atBottom) return;  // still room to scroll down
-    if (e.deltaY < 0 && !atTop)    return;  // still room to scroll up
+    // still room inside — let inner scroll handle it, reset accumulator
+    if (e.deltaY > 0 && !atBottom) { boundaryIntent = 0; return; }
+    if (e.deltaY < 0 && !atTop)    { boundaryIntent = 0; return; }
+    // at boundary — accumulate intent before allowing page flip
+    boundaryIntent += Math.abs(e.deltaY);
+    if (boundaryIntent < BOUNDARY_INTENT_NEEDED) return;
   }
 
+  boundaryIntent = 0;
   wheelLock = true;
-  setTimeout(() => { wheelLock = false; }, 1200);
+  setTimeout(() => { wheelLock = false; }, PAGE_FLIP_COOLDOWN);
   if (e.deltaY > 0) goTo(currentPage + 1);
   else goTo(currentPage - 1);
 }, { passive: true });
