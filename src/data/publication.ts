@@ -9,6 +9,7 @@ export interface Publication {
   tldr?: string;
   imageUrl?: string;
   award?: string;
+  tags?: string[]; // research areas, used by the filter above the publication list
 }
 
 export const publicationData: Publication[] = [
@@ -22,6 +23,7 @@ export const publicationData: Publication[] = [
     paperUrl: "https://doi.org/10.1145/3706598.3713791",
     tldr: "A framework that plans human-compatible affordance-based interactions for agents in real-world contexts.",
     imageUrl: "/images/acknowledge_cover.png",
+    tags: ["HCI", "HRI", "LLM"],
   },
   {
     year: "2024",
@@ -34,5 +36,6 @@ export const publicationData: Publication[] = [
     codeUrl: "https://github.com/Xiucheng-Zhang/DesignWatch",
     tldr: "A visual analytics tool that helps designers explore users' mobile-app operation paths from screen recordings.",
     imageUrl: "/images/designwatch_fig1.png",
+    tags: ["HCI", "Visualization"],
   },
 ];

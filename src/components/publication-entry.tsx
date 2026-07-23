@@ -95,6 +95,18 @@ export function PublicationEntry({
             {publication.tldr}
           </p>
         )}
+        {publication.tags && publication.tags.length > 0 && (
+          <div className="flex flex-wrap gap-2 mt-4">
+            {publication.tags.map((tag) => (
+              <span
+                key={tag}
+                className="text-[10px] tracking-wider uppercase text-zinc-400 border border-zinc-200 rounded-full px-2 py-0.5"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
