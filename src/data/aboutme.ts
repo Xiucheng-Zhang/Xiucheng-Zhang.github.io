@@ -27,10 +27,11 @@ export const aboutMe: AboutMe = {
   imageUrl: "/images/profile.jpg",
   cvUrl: "/uploads/AndyZhang_CV.pdf",
   githubUsername: "Xiucheng-Zhang",
-  linkedinUsername: "xiucheng-zhang-412b67330",
   institutionUrl: "https://cims.nyu.edu",
-  // Add these when ready:
+  // TODO: paste your Google Scholar profile URL here:
   // googleScholarUrl: "https://scholar.google.com/citations?user=...",
+  // Add these when ready:
+  // linkedinUsername: "xiucheng-zhang-412b67330",
   // twitterUsername: "...",
   // blogUrl: "https://...",
 };
