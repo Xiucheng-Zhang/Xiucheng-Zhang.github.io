@@ -28,9 +28,7 @@ const ptSerif = PT_Serif({
 export const metadata: Metadata = {
   title: customMetadata.title || aboutMe.name,
   description: customMetadata.description || aboutMe.description,
-  icons: {
-    icon: "/favicon.ico",
-  },
+  // Favicon: src/app/icon.png is picked up automatically by Next.js
   // Opt out of AI training crawlers (paired with public/robots.txt and public/.well-known/ai.txt)
   robots: "noai, noimageai",
   other: {
