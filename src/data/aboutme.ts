@@ -28,8 +28,7 @@ export const aboutMe: AboutMe = {
   cvUrl: "/uploads/AndyZhang_CV.pdf",
   githubUsername: "Xiucheng-Zhang",
   institutionUrl: "https://cims.nyu.edu",
-  // TODO: paste your Google Scholar profile URL here:
-  // googleScholarUrl: "https://scholar.google.com/citations?user=...",
+  googleScholarUrl: "https://scholar.google.com/citations?user=FUu-C2oAAAAJ&hl=en",
   // Add these when ready:
   // linkedinUsername: "xiucheng-zhang-412b67330",
   // twitterUsername: "...",
