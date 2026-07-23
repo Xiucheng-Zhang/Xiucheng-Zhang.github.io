@@ -21,7 +21,6 @@ export const publicationData: Publication[] = [
       "Ziqi Pan, Xiucheng Zhang, Zisu Li, Zhenhui Peng, Mingming Fan, Xiaojuan Ma",
     paperUrl: "https://doi.org/10.1145/3706598.3713791",
     tldr: "A framework that plans human-compatible affordance-based interactions for agents in real-world contexts.",
-    imageUrl: "/images/acknowledge_cover.png",
   },
   {
     year: "2024",
@@ -33,6 +32,5 @@ export const publicationData: Publication[] = [
     paperUrl: "https://doi.org/10.1145/3640471.3680231",
     codeUrl: "https://github.com/Xiucheng-Zhang/DesignWatch",
     tldr: "A visual analytics tool that helps designers explore users' mobile-app operation paths from screen recordings.",
-    imageUrl: "/images/designwatch_fig1.png",
   },
 ];
