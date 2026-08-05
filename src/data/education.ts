@@ -11,7 +11,7 @@ export const educationData: Education[] = [
   {
     year: "2025—Present",
     institution: "New York University, Courant Institute",
-    degree: "M.S. in Computer Science (expected Fall 2027)",
+    degree: "M.S. in Computer Science (expected Spring 2027)",
   },
   {
     year: "2021—2025",
