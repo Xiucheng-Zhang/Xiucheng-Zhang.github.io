@@ -47,6 +47,18 @@ export function PublicationEntry({
               </p>
             </div>
           )}
+          {publication.tags && publication.tags.length > 0 && (
+            <div className="flex flex-wrap gap-2 ml-auto">
+              {publication.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="text-[10px] tracking-wider uppercase text-zinc-400 border border-zinc-200 rounded-full px-2 py-0.5"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
         <h3 className="font-serif text-md mb-3">{publication.title}</h3>
         <p className="text-sm text-zinc-600 mb-4">
@@ -94,18 +106,6 @@ export function PublicationEntry({
           <p className="text-sm italic text-zinc-600 mt-4">
             {publication.tldr}
           </p>
-        )}
-        {publication.tags && publication.tags.length > 0 && (
-          <div className="flex flex-wrap gap-2 mt-4">
-            {publication.tags.map((tag) => (
-              <span
-                key={tag}
-                className="text-[10px] tracking-wider uppercase text-zinc-400 border border-zinc-200 rounded-full px-2 py-0.5"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
         )}
       </div>
     </div>
