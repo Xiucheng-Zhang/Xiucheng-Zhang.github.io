@@ -15,7 +15,7 @@ export interface Publication {
 export const publicationData: Publication[] = [
   {
     year: "2025",
-    conference: "CHEC",
+    conference: "ICHEC",
     title:
       "Exploring Community-Powered Conversational Agent for Health Knowledge Acquisition: A Case Study in Colorectal Cancer",
     authors:
