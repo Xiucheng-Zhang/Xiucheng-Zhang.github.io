@@ -15,6 +15,17 @@ export interface Publication {
 export const publicationData: Publication[] = [
   {
     year: "2025",
+    conference: "CHEC",
+    title:
+      "Exploring Community-Powered Conversational Agent for Health Knowledge Acquisition: A Case Study in Colorectal Cancer",
+    authors:
+      "Yiwei Yuan, Zhiqing Wang, Xiucheng Zhang, Yichao Luo, Shuya Lin, Yang Bai, Zhenhui Peng",
+    paperUrl: "https://doi.org/10.1145/3786995.3787015",
+    tldr: "A community-powered conversational agent (CanAnswer) that helps young adults acquire health knowledge, with colorectal cancer as a case study.",
+    tags: ["HCI", "LLM"],
+  },
+  {
+    year: "2025",
     conference: "CHI",
     title:
       "ACKnowledge: A Computational Framework for Human-Compatible Affordance-based Interaction Planning in Real-world Contexts",
@@ -24,6 +35,17 @@ export const publicationData: Publication[] = [
     tldr: "A framework that plans human-compatible affordance-based interactions for agents in real-world contexts.",
     imageUrl: "/images/acknowledge_cover.png",
     tags: ["HCI", "HRI", "LLM"],
+  },
+  {
+    year: "2025",
+    conference: "Int. J. Appl. Earth Obs. Geoinf.",
+    title:
+      "Low Saturation Confidence Distribution-based Test-Time Adaptation for Cross-Domain Remote Sensing Image Classification",
+    authors:
+      "Yu Liang, Shilei Cao, Juepeng Zheng, Xiucheng Zhang, Jianxi Huang, Haohuan Fu",
+    paperUrl: "https://doi.org/10.1016/j.jag.2025.104463",
+    tldr: "A test-time adaptation method that adapts a source-trained model to cross-domain remote sensing image classification on the fly, without source or target training data.",
+    tags: ["CV", "Remote Sensing"],
   },
   {
     year: "2024",
