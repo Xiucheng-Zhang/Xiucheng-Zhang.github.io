@@ -22,6 +22,7 @@ export const publicationData: Publication[] = [
       "Yiwei Yuan, Zhiqing Wang, Xiucheng Zhang, Yichao Luo, Shuya Lin, Yang Bai, Zhenhui Peng",
     paperUrl: "https://doi.org/10.1145/3786995.3787015",
     tldr: "A community-powered conversational agent (CanAnswer) that helps young adults acquire health knowledge, with colorectal cancer as a case study.",
+    imageUrl: "/images/cananswer_fig1.png",
     tags: ["HCI", "LLM"],
   },
   {
@@ -45,6 +46,7 @@ export const publicationData: Publication[] = [
       "Yu Liang, Shilei Cao, Juepeng Zheng, Xiucheng Zhang, Jianxi Huang, Haohuan Fu",
     paperUrl: "https://doi.org/10.1016/j.jag.2025.104463",
     tldr: "A test-time adaptation method that adapts a source-trained model to cross-domain remote sensing image classification on the fly, without source or target training data.",
+    imageUrl: "/images/lscd_tta_overview.png",
     tags: ["CV", "Remote Sensing"],
   },
   {
