@@ -59,6 +59,9 @@ export function PublicationList({
           </div>
         ))}
       </div>
+      <p className="text-xs text-zinc-400 mt-10">
+        * Equal contribution&ensp;·&ensp;† Corresponding author
+      </p>
     </div>
   );
 }
