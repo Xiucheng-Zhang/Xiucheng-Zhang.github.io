@@ -21,6 +21,19 @@ export function PublicationEntry({
 }: {
   publication: Publication;
 }) {
+  const tagChips = publication.tags && publication.tags.length > 0 && (
+    <div className="flex flex-wrap gap-2">
+      {publication.tags.map((tag) => (
+        <span
+          key={tag}
+          className="text-[10px] tracking-wider uppercase text-zinc-400 border border-zinc-200 rounded-full px-2 py-0.5"
+        >
+          {tag}
+        </span>
+      ))}
+    </div>
+  );
+
   const links = (
     <div className="flex flex-row gap-6">
       {publication.paperUrl && (
@@ -73,6 +86,7 @@ export function PublicationEntry({
             height={200}
             className="rounded-lg transition-all duration-300"
           />
+          {tagChips}
           {links}
         </div>
       )}
@@ -89,26 +103,17 @@ export function PublicationEntry({
               </p>
             </div>
           )}
-          {publication.tags && publication.tags.length > 0 && (
-            <div className="flex flex-wrap gap-2 ml-auto">
-              {publication.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="text-[10px] tracking-wider uppercase text-zinc-400 border border-zinc-200 rounded-full px-2 py-0.5"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
+          {!publication.imageUrl && tagChips && (
+            <div className="ml-auto">{tagChips}</div>
           )}
         </div>
         <h3 className="font-serif text-md mb-3">{publication.title}</h3>
-        <p className="text-sm text-zinc-600 mb-4">
+        <p className="text-sm text-zinc-600 mb-3">
           {highlightOwnName(publication.authors)}
         </p>
         {!publication.imageUrl && links}
         {publication.tldr && (
-          <p className="text-sm italic text-zinc-600 mt-4">
+          <p className="text-sm italic text-zinc-600">
             {publication.tldr}
           </p>
         )}
