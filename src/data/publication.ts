@@ -14,6 +14,19 @@ export interface Publication {
 
 export const publicationData: Publication[] = [
   {
+    year: "2026",
+    conference: "arXiv",
+    title:
+      "MasDrift: Benchmarking Authorization Preservation Across Multi-Agent Architectures",
+    authors:
+      "Zhuoning Xu, Xiucheng Zhang, Hanjun Luo, Yingbin Jin, Yinpeng Dong, Hanan Salam",
+    paperUrl: "https://arxiv.org/abs/2608.07556",
+    codeUrl: "https://github.com/ZhuoningXu/MasDrift",
+    tldr: "A benchmark of 600 tasks across 8 domains showing that multi-agent systems preserve task goals across handoffs but let authorization constraints drift, with centralized architectures completing more tasks yet violating access boundaries more often.",
+    imageUrl: "/images/masdrift_fig1.png",
+    tags: ["LLM"],
+  },
+  {
     year: "2025",
     conference: "ICHEC",
     title:
