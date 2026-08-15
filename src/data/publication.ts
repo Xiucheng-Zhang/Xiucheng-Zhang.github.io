@@ -15,6 +15,16 @@ export interface Publication {
 export const publicationData: Publication[] = [
   {
     year: "2026",
+    conference: "Under Review",
+    title: "MisPlan: When Plans Hurt Coding Agents",
+    authors:
+      "Hanjun Luo, Zhimu Huang, Alyssa Wu, Xiucheng Zhang, Zhuoning Xu, Jialin Li, Zhaolu Kang, Richeng Xuan, Zhichao Hu, Hanan Salam",
+    tldr: "A diagnostic benchmark built from 125K real coding-agent sessions showing when plans hurt coding agents: goal-scope errors in plans sharply reduce issue-resolution rates, while implementation-detail errors barely matter.",
+    imageUrl: "/images/misplan_fig1.png",
+    tags: ["LLM"],
+  },
+  {
+    year: "2026",
     conference: "arXiv",
     title:
       "MasDrift: Benchmarking Authorization Preservation Across Multi-Agent Architectures",
