@@ -16,6 +16,6 @@ export const educationData: Education[] = [
   {
     year: "2021—2025",
     institution: "Sun Yat-sen University",
-    degree: "B.E. in Artificial Intelligence",
+    degree: "B.S. in Artificial Intelligence",
   },
 ];
