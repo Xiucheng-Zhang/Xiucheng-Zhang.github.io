@@ -35,7 +35,7 @@ export function PublicationEntry({
   );
 
   const links = (
-    <div className="flex flex-row gap-6">
+    <div className="flex flex-row flex-wrap gap-x-6 gap-y-2">
       {publication.paperUrl && (
         <a
           href={publication.paperUrl}
