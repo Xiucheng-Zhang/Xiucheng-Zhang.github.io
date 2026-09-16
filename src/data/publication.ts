@@ -5,6 +5,7 @@ export interface Publication {
   authors: string;
   paperUrl?: string;
   codeUrl?: string;
+  projectUrl?: string;
   bibtex?: string;
   tldr?: string;
   imageUrl?: string;
@@ -13,6 +14,20 @@ export interface Publication {
 }
 
 export const publicationData: Publication[] = [
+  {
+    year: "2026",
+    conference: "arXiv",
+    title:
+      "ANIMASK: What the Model Contributes to Role Play in Simulated Story Worlds",
+    authors:
+      "Xiucheng Zhang, Zhuoning Xu, Hanjun Luo†, Yankai Chen, Hanan Salam, Xue Liu",
+    paperUrl: "https://arxiv.org/abs/2609.16667",
+    codeUrl: "https://github.com/Xiucheng-Zhang/ANIMASK",
+    projectUrl: "https://xiucheng-zhang.github.io/ANIMASK/",
+    tldr: "A simulation framework that freezes books and scripts into story worlds, replays them with LLM role-playing agents, and at every decision point compares the character's action with what the model does without the persona: across 40 stories, 6 actor models, and 3,846 decision points, the persona guarantees who the character is, while the model sets how far the character will go.",
+    imageUrl: "/images/animask_fig2.png",
+    tags: ["LLM"],
+  },
   {
     year: "2026",
     conference: "Under Review",
