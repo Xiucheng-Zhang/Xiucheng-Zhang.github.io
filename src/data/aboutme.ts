@@ -27,7 +27,7 @@ export const aboutMe: AboutMe = {
   // "<br /><br />My current research bridges human-AI interaction and agentic AI, along two threads: ① <b>Human-agent interaction</b> — designing interaction and feedback mechanisms that make LLM agents more capable and better aligned with user intent. ② <b>Trustworthy AI</b> — evaluating and improving the robustness and safety of LLMs and agents."
   email: "xz5473@nyu.edu",
   imageUrl: "/images/profile.jpg",
-  cvUrl: "/uploads/AndyZhang_CV.pdf",
+  // cvUrl: "/uploads/AndyZhang_CV.pdf", // hidden for now; uncomment to show the CV link again
   githubUsername: "Xiucheng-Zhang",
   institutionUrl: "https://cims.nyu.edu",
   googleScholarUrl: "https://scholar.google.com/citations?user=FUu-C2oAAAAJ&hl=en",
