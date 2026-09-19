@@ -90,13 +90,13 @@ export function PublicationEntry({
   return (
     <div className="flex flex-col sm:flex-row gap-6">
       {publication.imageUrl && (
-        <div className="w-full sm:w-1/4 min-w-[160px] relative flex flex-col gap-3">
+        <div className="w-full sm:w-2/5 min-w-[200px] relative flex flex-col gap-3">
           <Image
             src={publication.imageUrl}
             alt={publication.title}
-            width={160}
-            height={200}
-            className="rounded-lg transition-all duration-300"
+            width={440}
+            height={275}
+            className="w-full h-auto rounded-lg transition-all duration-300"
           />
           {tagChips}
           {links}
