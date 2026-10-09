@@ -30,6 +30,19 @@ export const publicationData: Publication[] = [
   },
   {
     year: "2026",
+    conference: "arXiv",
+    title:
+      "ParanoiaEval: Benchmarking Unnecessary Defensive Work in Agentic Coding",
+    authors:
+      "Hanjun Luo*†, Xiucheng Zhang*, Zhuoning Xu*, Zhimu Huang, Yingbin Jin, Xinfeng Li, Hanan Salam†",
+    paperUrl: "https://arxiv.org/abs/2610.08662",
+    codeUrl: "https://github.com/ZhuoningXu/ParanoiaEval_release",
+    tldr: "A 200-pair evidence-controlled benchmark showing that coding agents do unnecessary defensive work in 11.2%–58.7% of runs, and that stronger task capability does not mean better risk treatment.",
+    imageUrl: "/images/paranoiaeval_fig1.png",
+    tags: ["LLM"],
+  },
+  {
+    year: "2026",
     conference: "Under Review",
     title: "MisPlan: When Plans Hurt Coding Agents",
     authors:
